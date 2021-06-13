@@ -9,21 +9,12 @@ import Location from "./Location";
 import Bio from "./Bio";
 import Follow from "./Follow";
 import Stars from "./Stars";
+import useRepoDetails from "../hooks/useRepoDetails";
 
 function Main() {
-  const [user, setUser] = useState("sampadadhole");
   const [inputBox, setInputBox] = useState("");
-  const [userData, setUserData] = useState({
-    avatar: "",
-    name: "",
-    stars: "",
-    location: "",
-    repo: "",
-    bio: "",
-    followers: "",
-    following: "",
-    login: "",
-  });
+  const [user, setUser] = useState("sampadadhole");
+  const { userData } = useRepoDetails(user);
 
   function handleSearch(e) {
     setInputBox(e.target.value);
@@ -37,30 +28,6 @@ function Main() {
   useEffect(() => {
     console.log(userData);
   }, [userData]);
-
-  useEffect(() => {
-    console.log("initial, fetch");
-    if (user.length > 0) {
-      fetch(`https://api.github.com/users/${user}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setUserData({
-            ...userData,
-            name: data.name,
-            login: data.login,
-            avatar: data.avatar_url,
-            location: data.location,
-            repo: data.repos_url,
-            bio: data.bio,
-            followers: data.followers,
-            following: data.following,
-            stars: data.stars,
-          });
-        })
-
-        .catch((err) => console.log(err));
-    }
-  }, [user]);
 
   return (
     <div>
@@ -124,7 +91,6 @@ const SearchHeader = styled.div`
 `;
 
 const CardStyle = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
   /* width: 47rem; */
   /* height: 13rem; */
   /* position: relative; */
