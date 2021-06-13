@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function Avatar(props) {
   const { userData } = props;
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <AvatarImg src={userData.avatar} alt="img" />{" "}

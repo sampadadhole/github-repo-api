@@ -20,7 +20,7 @@ function Main() {
   }
 
   useEffect(() => {
-    console.log(userData);
+    // console.log(userData);
   }, [userData]);
 
   return (

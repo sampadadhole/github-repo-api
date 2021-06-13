@@ -15,7 +15,7 @@ function useRepoDetails(user) {
   const [repos, setRepos] = useState([""]);
 
   useEffect(() => {
-    console.log("initial, fetch");
+    // console.log("initial, fetch");
     if (user.length > 0) {
       fetch(`https://api.github.com/users/${user}`)
         .then((response) => response.json())
@@ -43,7 +43,7 @@ function useRepoDetails(user) {
       fetch(`https://api.github.com/users/${userData.login}/repos`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setRepos(data);
         });
     }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Details = (props) => {
   const { userData } = props;
-  console.log(userData);
+  // console.log(userData);
   return (
     <DetailsWrapper>
       <Name>{userData.name}</Name>
@@ -53,6 +53,9 @@ const Followers = (props) => {
 const FollowerWrapper = styled.div`
   display: flex;
   align-items: center;
+  path {
+    fill: ${(props) => props.theme.text};
+  }
 
   p {
     font-style: normal;
