@@ -7,6 +7,7 @@ const theme = {
   text: "#271a1a",
   bg: "#fff",
   brand: "#25EA50",
+  brandDark: "#0D902A",
 };
 
 function App() {

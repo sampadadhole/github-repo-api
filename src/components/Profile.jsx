@@ -17,6 +17,7 @@ const ProfileWrapper = styled.div`
   display: flex;
   max-width: 60rem;
   width: 80%;
+  margin: 0 auto;
   border-radius: 10rem 1rem 1rem 10rem;
   border: 3px solid ${(props) => props.theme.brand};
 `;

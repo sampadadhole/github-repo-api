@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // import Repo from "./Repo";
 import Profile from "./Profile";
+import Repo from "./Repo";
 import useRepoDetails from "../hooks/useRepoDetails";
 
 function Main() {
   const [inputBox, setInputBox] = useState("");
   const [user, setUser] = useState("sampadadhole");
-  const { userData } = useRepoDetails(user);
+  const { userData, repos } = useRepoDetails(user);
 
   function handleSearch(e) {
     setInputBox(e.target.value);
@@ -32,6 +33,7 @@ function Main() {
         </button>
       </SearchHeader>
       <Profile userData={userData} />
+      <Repo repos={repos} />
     </div>
   );
 }
