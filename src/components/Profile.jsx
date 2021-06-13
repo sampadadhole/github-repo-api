@@ -4,11 +4,19 @@ import Details from "./Details";
 
 const Profile = (props) => {
   return (
-    <div>
+    <ProfileWrapper>
       <Avatar {...props} />
       <Details {...props} />
-    </div>
+    </ProfileWrapper>
   );
 };
 
 export default Profile;
+
+const ProfileWrapper = styled.div`
+  display: flex;
+  max-width: 60rem;
+  width: 80%;
+  border-radius: 10rem 1rem 1rem 10rem;
+  border: 3px solid ${(props) => props.theme.brand};
+`;

@@ -14,8 +14,10 @@ function Avatar(props) {
 export default Avatar;
 
 const AvatarImg = styled.img`
-  height: 10rem;
-  width: 10rem;
+  height: 12rem;
+  width: 12rem;
   margin: 0 auto;
   padding: 1rem;
+  border-radius: 50%;
+  transform: translateX(-25px);
 `;
