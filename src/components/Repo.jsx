@@ -16,9 +16,13 @@ function Repo(props) {
               </a>
               <p className="label">Name</p>
               <p className="text-md">{item.name}</p>
-              <hr />
-              <p className="label">description</p>
-              <p className="text-sm">{item.description}</p>
+              {item.description && (
+                <>
+                  <hr />
+                  <p className="label">description</p>
+                  <p className="text-sm">{item.description}</p>
+                </>
+              )}
             </li>
           </RepoContainer>
         ))}
